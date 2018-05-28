@@ -17,7 +17,7 @@ public class Main {
         byte[] res = RSAEncrypt.decrypt(RSAEncrypt.loadPrivateKeyByStr(RSAEncrypt.loadPrivateKeyByFile(filepath)), Base64.decode(cipher));
         String restr = new String(res);
         System.out.println("原文：" + plainText);
-        System.out.println("加密：" + cipher);
+        System.out.println("加密：" + new String(cipher));
         System.out.println("解密：" + restr);
         System.out.println();
 
@@ -28,7 +28,7 @@ public class Main {
         res = RSAEncrypt.decrypt(RSAEncrypt.loadPublicKeyByStr(RSAEncrypt.loadPublicKeyByFile(filepath)), Base64.decode(cipher));
         restr = new String(res);
         System.out.println("原文：" + plainText);
-        System.out.println("加密：" + cipher);
+        System.out.println("加密：" + new String(cipher));
         System.out.println("解密：" + restr);
         System.out.println();
 

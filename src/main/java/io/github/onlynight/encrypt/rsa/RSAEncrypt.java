@@ -13,7 +13,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
 
 public class RSAEncrypt {
     private static final int MAX_ENCRYPT_BLOCK = 117;
@@ -51,8 +50,8 @@ public class RSAEncrypt {
             FileWriter prifw = new FileWriter(filePath + File.separator + "rsa_private_key.pem");
             BufferedWriter pubbw = new BufferedWriter(pubfw);
             BufferedWriter pribw = new BufferedWriter(prifw);
-            pubbw.write(Arrays.toString(publicKeyString));
-            pribw.write(Arrays.toString(privateKeyString));
+            pubbw.write(new String(publicKeyString));
+            pribw.write(new String(privateKeyString));
             pubbw.flush();
             pribw.flush();
             pubbw.close();
